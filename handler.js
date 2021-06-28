@@ -1,11 +1,14 @@
 'use strict';
 
 module.exports.hello = async event => {
+	// console.log(event.pathParameters.name);
+	const replyTo =
+		event.pathParameters.name;
 	return {
 		statusCode: 200,
 		body: JSON.stringify(
 			{
-				message: 'Hello there!'
+				message: `Hello there ${replyTo}!`
 			},
 			null,
 			2
